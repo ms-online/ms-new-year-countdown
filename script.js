@@ -12,6 +12,8 @@ console.log(currentYear);
 
 const newYearTime = new Date(`January 01 ${currentYear + 1} 00:00:00`);
 
+year.innerText = currentYear + 1;
+
 // 创建函数更新倒计时
 function updateCountdown() {
   const currentTime = new Date();
@@ -29,5 +31,10 @@ function updateCountdown() {
   seconds.innerHTML = s < 10 ? "0" + s : s;
 }
 // updateCountdown();
+
+setTimeout(() => {
+  loading.remove();
+  countdown.style.display = "flex";
+}, 1100);
 
 setInterval(updateCountdown, 1000);
